@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  frontdocker:
+    image: ${DOCKER_REGISTRY-}frontdocker
+    build:
+      context: .
+      dockerfile: frontDocker/Dockerfile
+    ports:
+            - "3000:80"
+
+  mywebapi:
+    image: ${DOCKER_REGISTRY-}mywebapi
+    build:
+      context: .
+      dockerfile: MyWebAPI/Dockerfile
+

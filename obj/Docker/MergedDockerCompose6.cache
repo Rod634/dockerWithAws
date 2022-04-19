@@ -1,0 +1,72 @@
+services:
+  frontdocker:
+    build:
+      context: C:\Users\Rodrigo.silva\source\repos\frontDocker
+      dockerfile: frontDocker/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: frontDocker
+      target: base
+    container_name: frontDocker
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: frontdocker:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/frontDocker.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    - published: 3000
+      target: 3000
+    tty: true
+    volumes:
+    - C:\Users\Rodrigo.silva\source\repos\frontDocker\frontDocker:/app:rw
+    - C:\Users\Rodrigo.silva\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Rodrigo.silva\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Rodrigo.silva\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Rodrigo.silva\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Rodrigo.silva\source\repos\frontDocker:/src:rw
+  mywebapi:
+    build:
+      context: C:\Users\Rodrigo.silva\source\repos\frontDocker
+      dockerfile: MyWebAPI/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MyWebAPI
+      target: base
+    container_name: MyWebAPI
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: ''
+    image: mywebapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/MyWebAPI.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\Rodrigo.silva\source\repos\frontDocker\MyWebAPI:/app:rw
+    - C:\Users\Rodrigo.silva\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\Rodrigo.silva\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Rodrigo.silva\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\Rodrigo.silva\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\Rodrigo.silva\source\repos\frontDocker:/src:rw
+version: '3.4'

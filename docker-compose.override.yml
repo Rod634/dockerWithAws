@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  frontdocker:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  mywebapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

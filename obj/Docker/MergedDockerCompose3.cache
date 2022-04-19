@@ -1,0 +1,28 @@
+services:
+  frontdocker:
+    build:
+      context: C:\Users\Rodrigo.silva\source\repos\frontDocker
+      dockerfile: frontDocker/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: frontdocker
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\Rodrigo.silva\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+  mywebapi:
+    build:
+      context: C:\Users\Rodrigo.silva\source\repos\frontDocker
+      dockerfile: MyWebAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: mywebapi
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\Rodrigo.silva\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+version: '3.4'

@@ -1,0 +1,17 @@
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\frontDocker.Views.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\frontDocker.Views.pdb
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\appsettings.Development.json
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\appsettings.json
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\frontDocker.exe
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\MyWebAPI.exe
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\frontDocker.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\MyWebAPI.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\frontDocker.pdb
+C:\Users\Rodrigo.silva\source\repos\frontDocker\bin\Debug\MyWebAPI.pdb
+C:\Users\Rodrigo.silva\source\repos\frontDocker\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Rodrigo.silva\source\repos\frontDocker\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Rodrigo.silva\source\repos\frontDocker\obj\Debug\docker-compose.dcproj.CopyComplete
